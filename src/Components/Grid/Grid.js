@@ -5,17 +5,19 @@ import GridItem from '../GridItem/GridItem';
 
 class Grid extends Component {
     render() {
-        const { posts } = this.props;
-        console.log(posts);
+        const { posts, onSelect } = this.props;
         return (
             <div className="Grid">
                 {
-                    posts.map(({ by, score, title, url}, index) => {
-                        return <GridItem 
+                    posts.map(({ by, score, title, selected}, index) => {
+                        return <GridItem
+                            zIndex={ 50 - index}
                             key={`GridItem-${index}`}
+                            gridKey={`GridItem-${index}`}
+                            onSelect={onSelect}
+                            selected={selected}
                             score={score}
                             title={title}
-                            url={url}
                             by={by}
                         />
                     })

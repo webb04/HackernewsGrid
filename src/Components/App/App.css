@@ -3,6 +3,7 @@
   min-height: calc(100vh - 160px);
   padding: 20px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 p {

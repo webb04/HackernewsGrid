@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Muuri from 'muuri';
+import $ from 'jquery';
 import './App.css';
 
 import Header from '../Header/Header';
@@ -33,8 +34,10 @@ class App extends Component {
   fetchPostDetails(id) {
     fetch(getPostUrl(id))
       .then(response => response.json())
-      .then(post => 
-        this.setState({ posts: [...this.state.posts, post], loading: false }))
+      .then(post => {
+        post.selected = false
+        this.setState({ posts: [...this.state.posts, post], loading: false })
+      })
   }
 
   componentDidMount() {
@@ -43,25 +46,50 @@ class App extends Component {
 
   reflowGrid() {
     if (document.querySelector('.Grid')) {
-      grid = new Muuri('.Grid');
+      setTimeout(() => grid = new Muuri('.Grid', {
+        layout: {
+          fillGaps: true,
+        }
+      }), 0);
     }
+  }
+
+  onSelect(title, key) {
+    const posts = this.state.posts;
+    // user has to close before opening another
+    const selected = posts.filter(post => post.selected);
+    if (selected.length && selected[0].title !== title) return;
+    
+    posts.forEach((post, index) => {
+      if (post.title === title) {
+        post.selected = !post.selected;
+        // swap to index before to give
+        // the appearance of opening inwards
+        const notLeftColumn = $(`#${key}`).offset().left > 200;
+        if (index > 0 && notLeftColumn) {
+          const swap = posts[index-1];
+          posts[index-1] = post;
+          posts[index] = swap;
+        }
+      } 
+    })
+    this.setState({ posts });
+    this.reflowGrid();
   }
 
   render() {
     const { loading, posts } = this.state;
     
-    if (posts.length) {
-        this.reflowGrid()
-    }
+    this.reflowGrid()
 
     return (
       <div>
         <Header />
         <div className="App">
           {
-            loading && !posts.length
+            loading && posts.length < 50
               ? <Loading />
-              : <Grid posts={ posts }/>
+              : <Grid posts={ posts } onSelect={ this.onSelect.bind(this) }/>
           }
         </div>
         <Footer />
