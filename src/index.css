@@ -1,0 +1,14 @@
+@font-face {
+  font-family: SourceSansPro;
+  src: url('./Fonts/SourceSansPro.ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: SourceSansPro, sans-serif;
+}
