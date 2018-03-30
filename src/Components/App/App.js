@@ -78,8 +78,7 @@ class App extends Component {
   }
 
   render() {
-    const { loading, posts } = this.state;
-    
+    const { loading, posts } = this.state; 
     this.reflowGrid()
 
     return (
