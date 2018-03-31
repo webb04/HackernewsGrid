@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Muuri from 'muuri';
 import $ from 'jquery';
+import fetch from 'isomorphic-fetch';
 import './App.css';
 
 import Header from '../Header/Header';
@@ -9,7 +10,6 @@ import Loading from '../Loading/Loading';
 import Footer from '../Footer/Footer';
 
 const TOP_STORIES = "https://hacker-news.firebaseio.com/v0/topstories.json";
-const getPostUrl = id => `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
 let grid;
 
 class App extends Component {
@@ -32,7 +32,7 @@ class App extends Component {
   }
 
   fetchPostDetails(id) {
-    fetch(getPostUrl(id))
+    fetch(this.getPostUrl(id))
       .then(response => response.json())
       .then(post => {
         post.selected = false
@@ -45,6 +45,7 @@ class App extends Component {
   }
 
   reflowGrid() {
+    if (!document || !document.hasOwnProperty('querySelector')) return;
     if (document.querySelector('.Grid')) {
       setTimeout(() => grid = new Muuri('.Grid', {
         layout: {

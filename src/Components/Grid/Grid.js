@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Grid.css';
 
 import GridItem from '../GridItem/GridItem';
@@ -25,6 +26,16 @@ class Grid extends Component {
             </div>
         )
     }
+}
+
+Grid.defaultProps = {
+    posts: [],
+    onSelect: () => {}
+}
+
+Grid.propTypes = {
+    posts: PropTypes.array,
+    onSelect: PropTypes.func
 }
 
 export default Grid;

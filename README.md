@@ -1,3 +1,8 @@
+To Run:
+- npm install
+- npm start
+- http://localhost:3000
+
 ## Available Scripts
 
 In the project directory, you can run:

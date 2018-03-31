@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import './GridItem.css';
@@ -31,6 +32,20 @@ class GridItem extends Component {
             </div>
         )
     }
+}
+
+GridItem.defaultProps = {
+    selected: false,
+    onSelect: () => {}
+}
+
+GridItem.propTypes = {
+    by: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
+    gridKey: PropTypes.string.isRequired,
+    zIndex: PropTypes.number.isRequired,
+    onSelect: PropTypes.func
 }
 
 export default GridItem;
