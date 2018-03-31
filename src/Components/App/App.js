@@ -45,7 +45,7 @@ class App extends Component {
   }
 
   reflowGrid() {
-    if (!document || !document.hasOwnProperty('querySelector')) return;
+    if (!document) return;
     if (document.querySelector('.Grid')) {
       setTimeout(() => grid = new Muuri('.Grid', {
         layout: {

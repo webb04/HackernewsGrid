@@ -49,12 +49,6 @@ const mockPosts = [
   }
 ]
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
-
 it('Selects only selects one post at a time', () => {
   const Component = shallow(<App />).instance();
   Component.setState({ posts: mockPosts });
