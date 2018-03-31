@@ -4,13 +4,13 @@ import GridItem from './GridItem';
 import renderer from 'react-test-renderer';
 import { shallow, mount } from 'enzyme';
 
-it('renders without crashing', () => {
+it('Renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<GridItem by='Fred' title="Title" gridKey="" zIndex={4} score={100}/>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it('renders correctly', () => {
+it('Renders correctly', () => {
     const tree = renderer
       .create(<GridItem by='Fred' title="Title" gridKey="" zIndex={4} score={125}/>)
       .toJSON();

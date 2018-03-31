@@ -54,7 +54,7 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it('renders correctly', () => {
+it('Renders correctly', () => {
     const tree = renderer
       .create(<Grid />)
       .toJSON();

@@ -3,6 +3,9 @@ To Run:
 - npm start
 - http://localhost:3000
 
+TODO:
+- On close, put the ordering back to how it was (reverse of current)
+
 ## Available Scripts
 
 In the project directory, you can run:
