@@ -11,6 +11,12 @@
     animation: shadow 3s linear forwards;
 }
 
+@media only screen and (max-width: 540px) {
+    .GridItem {
+        width: calc(100% - 40px);
+    }
+}
+
 @keyframes shadow {
     0% { 
         box-shadow: 0 0 0 transparent; 
