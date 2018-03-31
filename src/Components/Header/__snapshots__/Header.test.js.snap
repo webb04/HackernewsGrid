@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Renders correctly 1`] = `
+<header
+  className="Header"
+>
+  <h1
+    className="Header-title"
+  >
+    Hacker News
+  </h1>
+</header>
+`;
+
 exports[`renders correctly 1`] = `
 <header
   className="Header"

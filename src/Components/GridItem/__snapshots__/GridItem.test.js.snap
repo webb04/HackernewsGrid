@@ -1,5 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Renders correctly 1`] = `
+<div
+  className="GridItem"
+  id=""
+  onClick={[Function]}
+  style={
+    Object {
+      "zIndex": "4",
+    }
+  }
+>
+  <div
+    className="score"
+  >
+    125
+  </div>
+  <div
+    className="details"
+  >
+    <div
+      className="title"
+    >
+      <strong>
+        Title
+      </strong>
+    </div>
+    <div
+      className="by"
+    >
+      By 
+      Fred
+    </div>
+    <div>
+      Changes to our legacy lifecycle methods.
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders correctly 1`] = `
 <div
   className="GridItem"
