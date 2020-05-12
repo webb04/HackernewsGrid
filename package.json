@@ -7,7 +7,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "isomorphic-fetch": "^2.2.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "jsdom": "^11.6.2",
     "muuri": "^0.5.4",
     "react": "^16.3.0",
