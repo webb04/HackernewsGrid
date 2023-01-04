@@ -12,7 +12,7 @@
     "muuri": "^0.5.4",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
-    "react-scripts": "1.1.1",
+    "react-scripts": "5.0.1",
     "react-test-renderer": "^16.3.0"
   },
   "scripts": {
